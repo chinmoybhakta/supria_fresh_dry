@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সুপ্রিয়া ফ্রেশ অ্যান্ড ড্রাই ফুডস্ | Organic Dehydrated Foods</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#2D5A27',
+                        brandGreenDark: '#1C3119',
+                        brandAmber: '#E8A838',
+                        brandCoral: '#E07A5F',
+                        brandCream: '#FDFBF7',
+                        brandSand: '#F4EAD4',
+                    },
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Hind Siliguri', 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #1C3119;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-header {
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4EAD4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D5A27;
+            border-radius: 4px;
+        }
+
+        /* Smooth pulse animation */
+        @keyframes subtle-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .pulse-subtle {
+            animation: subtle-pulse 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brandAmber selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brandGreenDark text-brandCream text-xs md:text-sm py-2 px-4 text-center font-medium flex justify-between items-center px-6">
+        <span class="hidden md:inline">🌱 ১০০% বিশুদ্ধ, রাসায়নিক মুক্ত ও স্বাস্থ্যকর প্রিমিয়াম ড্রাই ফুড</span>
+        <span class="mx-auto md:mx-0">🚚 সারা বাংলাদেশে ক্যাশ অন ডেলিভারি সহজলভ্য | হটলাইন: <a href="tel:+8801745693992" class="underline hover:text-brandAmber">+8801745693992</a></span>
+        <span class="hidden md:inline text-brandAmber font-bold">🎁 ৫০০ টাকার বেশি অর্ডারে আকর্ষণীয় ছাড়!</span>
+    </div>
+
+    <!-- MAIN NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 glass-header border-b border-brandSand shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo & Brand Info -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-brandAmber p-0.5 shadow-md bg-white overflow-hidden flex items-center justify-center">
+                        <!-- Custom Inline SVG representation matching uploaded brand logo -->
+                        <img src="asset/logo.png" alt="logo.png" srcset="asset/logo.png">
+                    </div>
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold leading-tight text-brandGreenDark group-hover:text-brandGreen transition">
+                            সুপ্রিয়া ফ্রেশ অ্যান্ড ড্রাই ফুডস্
+                        </h1>
+                        <p class="text-[10px] md:text-xs font-semibold tracking-wider text-brandCoral uppercase">
+                            Organic Dehydrated Foods
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-base font-medium">
+                    <a href="#home" class="text-brandGreen font-bold border-b-2 border-brandGreen pb-1">হোম</a>
+                    <a href="#bestsellers" class="text-gray-700 hover:text-brandGreen transition">বেস্ট সেলিং</a>
+                    <a href="#products" class="text-gray-700 hover:text-brandGreen transition">আমাদের পণ্য</a>
+                    <a href="#custom-box" class="text-brandCoral hover:text-brandGreen font-semibold transition"><i class="fa-solid font-bold fa-box-open mr-1"></i> কাস্টম বক্স</a>
+                    <a href="#benefits" class="text-gray-700 hover:text-brandGreen transition">উপকারিতা</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-brandGreen transition">রিভিউ</a>
+                </nav>
+
+                <!-- Actions (Search, Cart, Quick Order) -->
+                <div class="flex items-center gap-3 md:gap-4">
+                    <button id="search-toggle" class="p-2 text-gray-700 hover:text-brandGreen rounded-full hover:bg-brandSand transition" title="Search">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+
+                    <button id="cart-btn" onclick="toggleCart()" class="relative p-2.5 bg-brandGreen text-white rounded-full hover:bg-brandGreenDark transition shadow-md flex items-center justify-center">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-brandCoral text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">0</span>
+                    </button>
+
+                    <a href="https://wa.me/8801745693992" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 rounded-full shadow transition text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>অর্ডার করুন</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-btn" class="lg:hidden p-2 text-gray-700 hover:text-brandGreen focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar Drawer -->
+        <div id="search-bar" class="hidden border-t border-brandSand bg-brandCream p-4 shadow-inner transition-all">
+            <div class="max-w-3xl mx-auto flex gap-2">
+                <input type="text" id="search-input" onkeyup="filterProductsBySearch()" placeholder="পণ্য খুঁজুন (যেমন: আমলকী, আপেল, বিটরুট, করলা পাউডার...)" class="w-full px-4 py-2.5 rounded-lg border border-brandSand focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm">
+                <button onclick="clearSearch()" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300">মুছুন</button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-brandSand bg-brandCream px-4 py-4 space-y-3 font-medium">
+            <a href="#home" class="block text-brandGreen font-bold py-1">হোম</a>
+            <a href="#bestsellers" class="block text-gray-700 hover:text-brandGreen py-1">বেস্ট সেলিং</a>
+            <a href="#products" class="block text-gray-700 hover:text-brandGreen py-1">আমাদের পণ্য</a>
+            <a href="#custom-box" class="block text-brandCoral font-semibold py-1">কাস্টম বক্স বিল্ডার</a>
+            <a href="#benefits" class="block text-gray-700 hover:text-brandGreen py-1">উপকারিতা</a>
+            <a href="#reviews" class="block text-gray-700 hover:text-brandGreen py-1">রিভিউ</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative overflow-hidden py-12 lg:py-20 bg-gradient-to-b from-brandSand/40 via-brandCream to-brandCream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brandAmber/20 text-brandGreenDark text-sm font-semibold border border-brandAmber/40">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brandAmber animate-ping"></span>
+                        ১০০% অর্গানিক ও প্রাকৃতিক সতেজতা
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brandGreenDark leading-tight">
+                        প্রকৃতির সেরা পুষ্টি এখন আপনার হাতের মুঠোয় <br>
+                        <span class="text-brandCoral">সুপ্রিয়া ফ্রেশ অ্যান্ড ড্রাই ফুডস্</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        কোনো ধরনের ক্ষতিকর রাসায়নিক বা প্রিজারভেটিভ ছাড়া বৈজ্ঞানিক উপায়ে শুকানো পুষ্টিকর ফলমূল, নাটস ও সিডস। আপনার স্বাস্থ্যকর জীবনধারার বিশ্বস্ত সঙ্গী।
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#products" class="px-7 py-3.5 bg-brandGreen hover:bg-brandGreenDark text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <span>পণ্য দেখুন</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#custom-box" class="px-7 py-3.5 bg-brandAmber hover:bg-yellow-600 text-brandGreenDark font-bold rounded-xl shadow transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>কাস্টম স্ন্যাক বক্স বানান</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Highlights Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-brandSand/80">
+                        <div class="text-center lg:text-left">
+                            <i class="fa-solid fa-leaf text-2xl text-brandGreen mb-1"></i>
+                            <h4 class="font-bold text-sm text-brandGreenDark">১০০% প্রাকৃতিক</h4>
+                            <p class="text-xs text-gray-600">কোন কেমিক্যাল মুক্ত</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <i class="fa-solid fa-ban-sugar text-2xl text-brandCoral mb-1"></i>
+                            <h4 class="font-bold text-sm text-brandGreenDark">বাড়তি চিনি মুক্ত</h4>
+                            <p class="text-xs text-gray-600">প্রাকৃতিক সুস্বাদ</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <i class="fa-solid fa-sun text-2xl text-brandAmber mb-1"></i>
+                            <h4 class="font-bold text-sm text-brandGreenDark">ডিহাইড্রেটেড ফুড</h4>
+                            <p class="text-xs text-gray-600">পুষ্টি গুণাগুণ অক্ষুণ্ণ</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <i class="fa-solid fa-truck-fast text-2xl text-brandGreen mb-1"></i>
+                            <h4 class="font-bold text-sm text-brandGreenDark">দ্রুত ডেলিভারি</h4>
+                            <p class="text-xs text-gray-600">সারা বাংলাদেশে</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Hero Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Background Glow -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-brandAmber to-brandGreen rounded-3xl blur-xl opacity-30"></div>
+                        
+                        <!-- Main Featured Product Card -->
+                        <div class="relative bg-white p-6 rounded-3xl border border-brandSand shadow-2xl space-y-4">
+                            <div class="relative overflow-hidden rounded-2xl bg-brandSand/30 aspect-square flex items-center justify-center group">
+                                <img src="asset/amloki_powder.jpg" alt="আমলকী পাউডার" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 left-3 bg-brandCoral text-white text-xs font-bold px-3 py-1 rounded-full shadow">হট সেলিং 🔥</span>
+                            </div>
+
+                            <div class="flex justify-between items-start pt-2">
+                                <div>
+                                    <h3 class="text-xl font-bold text-brandGreenDark">আমলকী পাউডার (Amla Powder)</h3>
+                                    <p class="text-xs text-gray-500">প্রাকৃতিক আমলকী থেকে তৈরি সূক্ষ্ম পাউডার</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xl font-extrabold text-brandGreen">৳ ১,০০০ / কেজি</span>
+                                </div>
+                            </div>
+
+                            <button onclick="addToCart(1, 'আমলকী পাউডার (Amla Powder)', 1000, 'asset/amloki_powder.jpg')" class="w-full py-3 bg-brandGreen hover:bg-brandGreenDark text-white font-bold rounded-xl shadow flex items-center justify-center gap-2 transition">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <span>কার্টে যোগ করুন</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST SELLING SECTION -->
+    <section id="bestsellers" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brandCoral font-bold text-sm tracking-wider uppercase">সর্বাধিক জনপ্রিয়</span>
+                <h2 class="text-3xl font-extrabold text-brandGreenDark mt-1">আমাদের বেস্ট সেলিং পণ্যসমূহ</h2>
+                <div class="w-16 h-1 bg-brandAmber mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="category-tabs">
+                <button onclick="filterCategory('all')" class="cat-btn active border px-5 py-2 rounded-full text-sm font-semibold transition bg-brandGreen text-white border-brandGreen">সবগুলো</button>
+                <button onclick="filterCategory('fruit-powder')" class="cat-btn border px-5 py-2 rounded-full text-sm font-semibold transition bg-brandCream text-gray-700 hover:bg-brandSand border-brandSand">ফল পাউডার</button>
+                <button onclick="filterCategory('vegetable-powder')" class="cat-btn border px-5 py-2 rounded-full text-sm font-semibold transition bg-brandCream text-gray-700 hover:bg-brandSand border-brandSand">সবজি পাউডার</button>
+                <button onclick="filterCategory('leaf-powder')" class="cat-btn border px-5 py-2 rounded-full text-sm font-semibold transition bg-brandCream text-gray-700 hover:bg-brandSand border-brandSand">পাতার পাউডার</button>
+            </div>
+
+            <!-- Best Selling Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="bestseller-grid">
+                <!-- JavaScript rendered dynamic product cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILD YOUR OWN SNACK BOX CUSTOMIZER -->
+    <section id="custom-box" class="py-16 bg-gradient-to-br from-brandSand/60 via-brandCream to-brandSand/40 border-y border-brandSand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="inline-block px-3 py-1 bg-brandCoral/20 text-brandCoral font-bold text-xs rounded-full">ইন্টারেক্টিভ বৈশিষ্ট্য</span>
+                    <h2 class="text-3xl font-extrabold text-brandGreenDark">নিজের পছন্দমতো তৈরি করুন পাউডার বক্স</h2>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        আপনার পছন্দের পাউডারগুলো বেছে নিন। প্রতিটি নির্বাচনের মূল্য ৳ ১,০০০ / কেজি হিসেবে যোগ হবে।
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border border-brandSand shadow-sm space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">নির্বাচন করা উপাদান:</span>
+                            <span id="custom-count" class="font-bold text-brandGreen">০ টি Item</span>
+                        </div>
+                        <div class="flex justify-between text-base font-bold">
+                            <span>মোট মূল্য:</span>
+                            <span id="custom-total-price" class="text-brandCoral text-xl">৳ ০</span>
+                        </div>
+                        <button onclick="addCustomBoxToCart()" id="add-custom-box-btn" disabled class="w-full mt-3 py-3 bg-gray-300 text-gray-500 font-bold rounded-xl cursor-not-allowed transition">
+                            কার্টে যোগ করুন
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interactive Item Selection Grid -->
+                <div class="lg:col-span-7 bg-white p-6 rounded-2xl shadow-md border border-brandSand">
+                    <h3 class="font-bold text-brandGreenDark mb-4 text-base border-b pb-2">উপাদান নির্বাচন করুন (কমপক্ষে ২টি বেছে নিন):</h3>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="custom-items-grid">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL PRODUCTS CATALOG SECTION -->
+    <section id="products" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-brandCoral font-bold text-sm uppercase tracking-wide">আমাদের ক্যাটালগ</span>
+                    <h2 class="text-3xl font-extrabold text-brandGreenDark mt-1">সবগুলো অর্গানিক খাদ্যপণ্য</h2>
+                </div>
+                <!-- Price Range Filter Slider -->
+                <div class="bg-brandCream p-4 rounded-xl border border-brandSand flex flex-col gap-1 min-w-[260px]">
+                    <div class="flex justify-between text-xs font-semibold text-gray-700">
+                        <span>সর্বোচ্চ মূল্য নির্ধারণ:</span>
+                        <span id="price-range-val" class="text-brandGreen font-bold">৳ ২০০০</span>
+                    </div>
+                    <input type="range" id="price-range" min="200" max="2000" step="50" value="2000" oninput="filterByPrice(this.value)" class="accent-brandGreen cursor-pointer">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="all-products-grid">
+                <!-- Rendered dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANIC & HEALTH BENEFITS SECTION -->
+    <section id="benefits" class="py-16 bg-brandGreenDark text-brandCream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brandAmber font-bold text-sm uppercase tracking-wider">স্বাস্থ্য সুরক্ষা</span>
+                <h2 class="text-3xl font-extrabold text-white mt-1">কেন ড্রাই ফুড আপনার প্রাত্যহিক খাদ্যাভ্যাসে জরুরি?</h2>
+                <div class="w-16 h-1 bg-brandAmber mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-brandAmber transition">
+                    <div class="w-12 h-12 rounded-xl bg-brandAmber text-brandGreenDark flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">হৃদযন্ত্র ও রক্তের সুরক্ষা</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        ড্রাই ফ্রুটসে রয়েছে প্রচুর পরিমাণে প্রাকৃতিক অ্যান্টি-অক্সিডেন্ট ও ওমেগা-৩ ফ্যাটি এসিড, যা রক্তচাপ স্বাভাবিক রাখতে এবং হৃদরোগের ঝুঁকি কমাতে সহায়তা করে।
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-brandAmber transition">
+                    <div class="w-12 h-12 rounded-xl bg-brandCoral text-white flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ইনস্ট্যান্ট এনার্জি বুস্টার</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        কাজের ফাঁকে বা ভ্রমণের সময় কৃত্রিম স্ন্যাক্সের বদলে ডিহাইড্রেটেড ফল ও ড্রাই ফ্রুটস খেলে শরীর তাৎক্ষণিক প্রাকৃতিক শক্তি ও সতেজতা পায়।
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-brandAmber transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        প্রাকৃতিক ভিটামিন সি, ই ও প্রয়োজনীয় খনিজ উপাদানে ভরপুর আমাদের ড্রাই ফুডস শরীরের রোগ প্রতিরোধ ক্ষমতা বহুগুণ বাড়িয়ে তোলে।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section id="reviews" class="py-16 bg-brandCream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brandCoral font-bold text-sm uppercase">গ্রাহকদের মন্তব্য</span>
+                <h2 class="text-3xl font-extrabold text-brandGreenDark mt-1">আমাদের সন্তুষ্ট গ্রাহকদের অভিজ্ঞতা</h2>
+                <div class="w-16 h-1 bg-brandAmber mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSand shadow-sm space-y-3">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-sm italic">
+                        "সুপ্রিয়ার ড্রাই ডুমুর ও মিক্সড নাটস কোয়ালিটি সত্যিই অসাধারণ! একদম ফ্রেশ আর ক্রিসপি। বাচ্চাদের জন্য নিয়মিত অর্ডার করি।"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-100">
+                        <div class="w-10 h-10 rounded-full bg-brandGreen text-white font-bold flex items-center justify-center text-sm">
+                            রা
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandGreenDark">রাফিয়া সুলতানা</h4>
+                            <p class="text-xs text-gray-500">ঢাকা</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSand shadow-sm space-y-3">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-sm italic">
+                        "ডিহাইড্রেটেড আম ও খোবানি ফলগুলো ড্রাই হলেও স্বাদ খুব জীবন্ত! প্যাকেজিং খুব সুন্দর ও কেমিক্যাল ফ্রি পণ্য।"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-100">
+                        <div class="w-10 h-10 rounded-full bg-brandAmber text-brandGreenDark font-bold flex items-center justify-center text-sm">
+                            তা
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandGreenDark">তানভীর হাসান</h4>
+                            <p class="text-xs text-gray-500">চট্টগ্রাম</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSand shadow-sm space-y-3">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-sm italic">
+                        "কাস্টম স্ন্যাক বক্স বিল্ডার ফিচারটা খুব হেল্পফুল ছিল। আমার পছন্দমত আইটেম দিয়ে বক্স বানিয়ে অর্ডার করেছি। ধন্যবাদ!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-100">
+                        <div class="w-10 h-10 rounded-full bg-brandCoral text-white font-bold flex items-center justify-center text-sm">
+                            মা
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brandGreenDark">মাহমুদা বেগম</h4>
+                            <p class="text-xs text-gray-500">সিলেট</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandGreenDark text-brandCream border-t border-brandGreen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-brandAmber p-0.5 shadow-md bg-white overflow-hidden flex items-center justify-center">
+                            <img src="asset/logo.png" alt="logo.png" srcset="asset/logo.png">
+                        </div>
+                        <span class="font-bold text-lg text-white">সুপ্রিয়া ফ্রেশ</span>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        প্রাকৃতিক ও বিশুদ্ধ অর্গানিক ডিহাইড্রেটেড ফুড এবং প্রিমিয়াম ড্রাই ফ্রুটসের বিশ্বস্ত প্রতিষ্ঠান।
+                    </p>
+                    <div class="flex gap-3 text-lg text-brandSand">
+                        <a href="#" class="hover:text-brandAmber transition"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-brandAmber transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brandAmber transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="hover:text-brandAmber transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-4 border-b border-white/10 pb-2 text-sm">দ্রুত লিঙ্ক</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#home" class="hover:text-brandAmber transition">হোম পেজ</a></li>
+                        <li><a href="#bestsellers" class="hover:text-brandAmber transition">বেস্ট সেলিং প্রোডাক্ট</a></li>
+                        <li><a href="#products" class="hover:text-brandAmber transition">সকল পণ্যসমূহ</a></li>
+                        <li><a href="#custom-box" class="hover:text-brandAmber transition">কাস্টম গিফট বক্স</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Customer Care -->
+                <div>
+                    <h4 class="font-bold text-white mb-4 border-b border-white/10 pb-2 text-sm">গ্রাহক সেবা</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#" class="hover:text-brandAmber transition">অর্ডার করার নিয়ম</a></li>
+                        <li><a href="#" class="hover:text-brandAmber transition">শিপিং ও ডেলিভারি পলিসি</a></li>
+                        <li><a href="#" class="hover:text-brandAmber transition">রিফান্ড ও রিটার্ন নীতি</a></li>
+                        <li><a href="#" class="hover:text-brandAmber transition">প্রাইভেসি পলিসি</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-4 border-b border-white/10 pb-2 text-sm">যোগাযোগ করুন</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brandAmber"></i> বরিশাল সদর, বরিশাল, বাংলাদেশ</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brandAmber"></i> +8801745693992</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brandAmber"></i> mvokto19@gmail.com</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 mt-10 pt-6 text-center text-xs text-gray-400">
+                © ২০২৬ সুপ্রিয়া ফ্রেশ অ্যান্ড ড্রাই ফুডস্। সর্বস্বত্ব সংরক্ষিত।
+            </div>
+        </div>
+    </footer>
+
+    <!-- QUICK VIEW MODAL -->
+    <div id="quickview-modal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 relative shadow-2xl animate-fade-in">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2" id="modal-content">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CART SLIDE-OUT DRAWER -->
+    <div id="cart-drawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-4 bg-brandGreen text-white flex justify-between items-center">
+            <div class="flex items-center gap-2 font-bold text-lg">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>শপিং কার্ট</span>
+            </div>
+            <button onclick="toggleCart()" class="text-white hover:text-brandAmber text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-4 space-y-4" id="cart-items">
+            <!-- Items rendered via JS -->
+        </div>
+
+        <div class="p-4 border-t border-gray-200 bg-brandCream space-y-3">
+            <div class="flex justify-between font-bold text-base text-brandGreenDark">
+                <span>সর্বমোট:</span>
+                <span id="cart-total" class="text-brandCoral text-xl">৳ ০</span>
+            </div>
+            <p class="text-[11px] text-gray-500">* ডেলিভারি চার্জ চেকআউটের সময় যুক্ত হবে</p>
+            <form id="checkout-form" onsubmit="checkout(event)" class="space-y-3">
+                <div>
+                    <label for="customer-name" class="block text-xs font-semibold text-brandGreenDark mb-1">আপনার নাম</label>
+                    <input id="customer-name" name="name" type="text" autocomplete="name" required maxlength="100" oninput="this.setCustomValidity('')" placeholder="যে নামে অর্ডার করবেন" class="w-full px-3 py-2 rounded-lg border border-brandSand focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm">
+                </div>
+                <div>
+                    <label for="customer-address" class="block text-xs font-semibold text-brandGreenDark mb-1">ডেলিভারির ঠিকানা</label>
+                    <textarea id="customer-address" name="address" autocomplete="street-address" required maxlength="300" rows="2" oninput="this.setCustomValidity('')" placeholder="বাড়ি/রোড, এলাকা, শহর" class="w-full px-3 py-2 rounded-lg border border-brandSand focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm resize-y"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-brandGreen hover:bg-brandGreenDark text-white font-bold rounded-xl shadow transition text-center block">
+                    WhatsApp-এ অর্ডার নিশ্চিত করুন
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/8801745693992?text=Hello!%20I%20want%20to%20order%20from%20Supriya%20Fresh" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110" title="Direct WhatsApp Order">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        // --- PRODUCT DATA CATALOG ---
+        const products = [
+            {
+                id: 1,
+                name: 'আমলকী পাউডার (Amla Powder)',
+                category: 'fruit-powder',
+                price: 1000,
+                tag: 'ফল পাউডার',
+                image: 'asset/amloki_powder.jpg',
+                desc: 'আমলকী থেকে তৈরি সূক্ষ্ম পাউডার।'
+            },
+            {
+                id: 2,
+                name: 'আপেল পাউডার (Apple Powder)',
+                category: 'fruit-powder',
+                price: 1000,
+                tag: 'ফল পাউডার',
+                image: 'asset/apple_powder.png',
+                desc: 'আপেল থেকে তৈরি সূক্ষ্ম পাউডার।'
+            },
+            {
+                id: 3,
+                name: 'বিটরুট পাউডার (Beetroot Powder)',
+                category: 'vegetable-powder',
+                price: 1000,
+                tag: 'সবজি পাউডার',
+                image: 'asset/beetroot_powder.jpg',
+                desc: 'বিটরুট থেকে তৈরি সূক্ষ্ম পাউডার।'
+            },
+            {
+                id: 4,
+                name: 'করলা পাউডার (Bitter Gourd Powder)',
+                category: 'vegetable-powder',
+                price: 1000,
+                tag: 'সবজি পাউডার',
+                image: 'asset/bitter_gourd_powder.png',
+                desc: 'করলা থেকে তৈরি সূক্ষ্ম পাউডার।'
+            },
+            {
+                id: 5,
+                name: 'নিমপাতা পাউডার (Neem Leaf Powder)',
+                category: 'leaf-powder',
+                price: 1000,
+                tag: 'পাতার পাউডার',
+                image: 'asset/neem_powder.jpg',
+                desc: 'নিমপাতা থেকে তৈরি সূক্ষ্ম পাউডার।'
+            },
+            {
+                id: 6,
+                name: 'পেঁয়াজ পাউডার (Onion Powder)',
+                category: 'vegetable-powder',
+                price: 1000,
+                tag: 'সবজি পাউডার',
+                image: 'asset/onion_powder.jpg',
+                desc: 'পেঁয়াজ থেকে তৈরি সূক্ষ্ম পাউডার।'
+            },
+            {
+                id: 7,
+                name: 'কমলালেবু পাউডার (Orange Powder)',
+                category: 'fruit-powder',
+                price: 1000,
+                tag: 'ফল পাউডার',
+                image: 'asset/orange_powder.jpg',
+                desc: 'কমলালেবু থেকে তৈরি সূক্ষ্ম পাউডার।'
+            }
+        ];
+
+        // Custom Box Selector Component Items
+        const customItems = products.map(product => ({
+            id: `c${product.id}`,
+            name: product.name,
+            price: product.price,
+            image: product.image
+        }));
+
+        let selectedCustomItems = [];
+        let cart = [];
+
+        // --- INITIALIZATION ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderBestSellers('all');
+            renderAllProducts(products);
+            renderCustomBoxItems();
+
+            // Mobile menu toggle
+            document.getElementById('menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            // Search bar toggle
+            document.getElementById('search-toggle').addEventListener('click', () => {
+                document.getElementById('search-bar').classList.toggle('hidden');
+            });
+        });
+
+        // --- RENDER FUNCTIONS ---
+        function renderBestSellers(category) {
+            const container = document.getElementById('bestseller-grid');
+            let filtered = products;
+            if (category !== 'all') {
+                filtered = products.filter(p => p.category === category);
+            }
+
+            container.innerHTML = filtered.map(product => `
+                <div class="bg-brandCream rounded-2xl p-4 border border-brandSand hover:border-brandGreen transition duration-300 shadow-sm hover:shadow-md flex flex-col justify-between group">
+                    <div>
+                        <div class="relative rounded-xl overflow-hidden mb-3 aspect-square bg-gray-100">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-2 left-2 bg-brandGreen text-white text-[10px] font-bold px-2.5 py-1 rounded-full">${product.tag}</span>
+                            <button onclick="openQuickView(${product.id})" class="absolute bottom-2 right-2 bg-white/90 hover:bg-white text-brandGreenDark text-xs font-bold px-3 py-1.5 rounded-lg shadow backdrop-blur transition">
+                                <i class="fa-regular fa-eye mr-1"></i> কুইক ভিউ
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-brandGreenDark text-base leading-snug hover:text-brandGreen cursor-pointer" onclick="openQuickView(${product.id})">${product.name}</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">${product.desc}</p>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-brandSand/60 flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-brandGreen">৳ ${product.price.toLocaleString('en-US')} / কেজি</span>
+                        </div>
+                        <button onclick="addToCart(${product.id}, '${product.name}', ${product.price}, '${product.image}')" class="bg-brandGreen hover:bg-brandGreenDark text-white p-2.5 rounded-xl shadow transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderAllProducts(items) {
+            const container = document.getElementById('all-products-grid');
+            if (items.length === 0) {
+                container.innerHTML = `<p class="col-span-full text-center text-gray-500 py-8">কোনো পণ্য পাওয়া যায়নি।</p>`;
+                return;
+            }
+
+            container.innerHTML = items.map(product => `
+                <div class="bg-white rounded-2xl p-4 border border-brandSand hover:shadow-lg transition flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-xl overflow-hidden mb-3 aspect-square bg-gray-50">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-bold text-brandGreenDark text-sm">${product.name}</h3>
+                        <p class="text-xs text-gray-500 mt-1">${product.desc}</p>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-base font-bold text-brandGreen">৳ ${product.price.toLocaleString('en-US')} / কেজি</span>
+                        <button onclick="addToCart(${product.id}, '${product.name}', ${product.price}, '${product.image}')" class="px-3 py-1.5 bg-brandSand hover:bg-brandAmber text-brandGreenDark font-bold rounded-lg text-xs transition">
+                            + কার্ট
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- FILTER & SEARCH LOGIC ---
+        function filterCategory(cat) {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-brandGreen', 'text-white');
+                btn.classList.add('bg-brandCream', 'text-gray-700');
+            });
+            event.target.classList.add('bg-brandGreen', 'text-white');
+            renderBestSellers(cat);
+        }
+
+        function filterByPrice(maxPrice) {
+            document.getElementById('price-range-val').innerText = `৳ ${maxPrice}`;
+            const filtered = products.filter(p => p.price <= maxPrice);
+            renderAllProducts(filtered);
+        }
+
+        function filterProductsBySearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
+            renderAllProducts(filtered);
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            renderAllProducts(products);
+        }
+
+        // --- CUSTOM BOX BUILDER LOGIC ---
+        function renderCustomBoxItems() {
+            const container = document.getElementById('custom-items-grid');
+            container.innerHTML = customItems.map(item => `
+                <div onclick="toggleCustomItem('${item.id}')" id="custom-item-${item.id}" class="border-2 border-brandSand p-3 rounded-xl cursor-pointer hover:border-brandAmber transition text-center select-none bg-brandCream/50">
+                    <h4 class="font-bold text-xs text-brandGreenDark">${item.name}</h4>
+                    <span class="text-xs font-semibold text-brandCoral block mt-1">+ ৳ ${item.price.toLocaleString('en-US')} / কেজি</span>
+                </div>
+            `).join('');
+        }
+
+        function toggleCustomItem(id) {
+            const index = selectedCustomItems.findIndex(i => i.id === id);
+            const el = document.getElementById(`custom-item-${id}`);
+
+            if (index > -1) {
+                selectedCustomItems.splice(index, 1);
+                el.classList.remove('border-brandGreen', 'bg-brandGreen/10');
+                el.classList.add('border-brandSand');
+            } else {
+                const item = customItems.find(i => i.id === id);
+                selectedCustomItems.push(item);
+                el.classList.add('border-brandGreen', 'bg-brandGreen/10');
+                el.classList.remove('border-brandSand');
+            }
+
+            updateCustomBoxSummary();
+        }
+
+        function updateCustomBoxSummary() {
+            const total = selectedCustomItems.reduce((sum, item) => sum + item.price, 0);
+            const count = selectedCustomItems.length;
+
+            document.getElementById('custom-count').innerText = `${count} টি Item`;
+            document.getElementById('custom-total-price').innerText = `৳ ${total}`;
+
+            const btn = document.getElementById('add-custom-box-btn');
+            if (count >= 2) {
+                btn.disabled = false;
+                btn.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+                btn.classList.add('bg-brandGreen', 'hover:bg-brandGreenDark', 'text-white', 'shadow');
+            } else {
+                btn.disabled = true;
+                btn.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+                btn.classList.remove('bg-brandGreen', 'hover:bg-brandGreenDark', 'text-white', 'shadow');
+            }
+        }
+
+        function addCustomBoxToCart() {
+            const total = selectedCustomItems.reduce((sum, item) => sum + item.price, 0);
+            const itemNames = selectedCustomItems.map(i => i.name).join(', ');
+            addToCart(`custom-${Date.now()}`, `কাস্টম পাউডার বক্স (${itemNames})`, total, selectedCustomItems[0].image);
+        }
+
+        // --- CART SYSTEM LOGIC ---
+        function addToCart(id, name, price, image) {
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ id, name, price, image, qty: 1 });
+            }
+            updateCartUI();
+            toggleCart(true);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => String(item.id) !== String(id));
+            updateCartUI();
+        }
+
+        function updateCartQty(id, delta) {
+            const item = cart.find(i => String(i.id) === String(id));
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) removeFromCart(id);
+                else updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const cartItemsEl = document.getElementById('cart-items');
+            const cartCountEl = document.getElementById('cart-count');
+            const cartTotalEl = document.getElementById('cart-total');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            cartCountEl.innerText = totalItems;
+            cartTotalEl.innerText = `৳ ${totalPrice}`;
+
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = `<p class="text-center text-gray-500 py-12 text-sm">আপনার কার্ট খালি রয়েছে</p>`;
+                return;
+            }
+
+            cartItemsEl.innerHTML = cart.map(item => `
+                <div class="flex items-center gap-3 p-3 bg-brandCream rounded-xl border border-brandSand">
+                    <img src="${item.image}" alt="${item.name}" class="w-14 h-14 rounded-lg object-cover">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-xs text-brandGreenDark leading-tight">${item.name}</h4>
+                        <span class="text-xs text-brandCoral font-semibold">৳ ${item.price}</span>
+                        <div class="flex items-center gap-2 mt-1">
+                            <button onclick="updateCartQty('${item.id}', -1)" class="w-5 h-5 bg-gray-200 rounded text-xs">-</button>
+                            <span class="text-xs font-bold">${item.qty}</span>
+                            <button onclick="updateCartQty('${item.id}', 1)" class="w-5 h-5 bg-gray-200 rounded text-xs">+</button>
+                        </div>
+                    </div>
+                    <button onclick="removeFromCart('${item.id}')" class="text-gray-400 hover:text-red-500 text-sm">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            if (forceOpen) {
+                drawer.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.toggle('translate-x-full');
+            }
+        }
+
+        function checkout(event) {
+            event.preventDefault();
+            if (cart.length === 0) return;
+
+            const nameInput = document.getElementById('customer-name');
+            const addressInput = document.getElementById('customer-address');
+            const customerName = nameInput.value.trim();
+            const customerAddress = addressInput.value.trim();
+
+            nameInput.setCustomValidity(customerName ? '' : 'আপনার নাম লিখুন।');
+            addressInput.setCustomValidity(customerAddress ? '' : 'ডেলিভারির ঠিকানা লিখুন।');
+            if (!nameInput.reportValidity() || !addressInput.reportValidity()) return;
+
+            const itemsList = cart.map(i => `${i.name} (x${i.qty})`).join(', ');
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const text = `অর্ডার কনফার্মেশন:\nপণ্য: ${itemsList}\nসর্বমোট মূল্য: ৳ ${total}\nআমার নাম: ${customerName}\nও ঠিকানা: ${customerAddress}`;
+            window.open(`https://wa.me/8801745693992?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // --- QUICK VIEW MODAL LOGIC ---
+        function openQuickView(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <div class="rounded-xl overflow-hidden bg-gray-50 aspect-square">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-brandAmber/20 text-brandGreenDark text-xs font-bold px-2.5 py-1 rounded-full">${product.tag}</span>
+                    <h2 class="text-2xl font-bold text-brandGreenDark leading-tight">${product.name}</h2>
+                    <p class="text-xs text-gray-600 leading-relaxed">${product.desc}</p>
+                    
+                    <div class="pt-2">
+                        <span class="text-2xl font-extrabold text-brandGreen">৳ ${product.price.toLocaleString('en-US')} / কেজি</span>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-100 flex gap-3">
+                        <button onclick="addToCart(${product.id}, '${product.name}', ${product.price}, '${product.image}'); closeQuickView();" class="flex-1 py-3 bg-brandGreen hover:bg-brandGreenDark text-white font-bold rounded-xl shadow transition text-sm">
+                            কার্টে যোগ করুন
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('quickview-modal').classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickview-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
