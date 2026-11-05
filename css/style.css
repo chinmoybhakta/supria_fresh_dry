@@ -1,0 +1,33 @@
+body {
+            font-family: 'Hind Siliguri', 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #1C3119;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-header {
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4EAD4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D5A27;
+            border-radius: 4px;
+        }
+
+        /* Smooth pulse animation */
+        @keyframes subtle-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .pulse-subtle {
+            animation: subtle-pulse 3s infinite ease-in-out;
+        }
